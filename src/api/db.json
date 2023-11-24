@@ -1,0 +1,28 @@
+{
+  "persona": [
+    {
+      "id": 1,
+      "nombre": "Wisofer",
+      "apellido": "17",
+      "edad": 21
+    },
+    {
+      "id": 2,
+      "nombre": "Nicole",
+      "apellido": "Suarez",
+      "edad": 17
+    },
+    {
+      "id": 3,
+      "nombre": "Maria Guadalupe",
+      "apellido": "Flores",
+      "edad": 19
+    },
+    {
+      "id": 4,
+      "nombre": "Ashly",
+      "apellido" : "Hernandez",
+      "edad": 23
+    }
+  ]
+}
