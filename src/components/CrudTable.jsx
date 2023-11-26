@@ -1,7 +1,12 @@
 import React from "react";
 import CrudTableRow from "./CrudTableRow";
+import { useContexto } from "../context/Context";
 
-const CrudTable = ({ db, setdataToEdit, deleteData }) => {
+const CrudTable = ( ) => {
+
+    const { db, setdataToEdit, deleteData } = useContexto()
+
+
   return (
     <div className="mt-4 overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-300">
@@ -25,8 +30,6 @@ const CrudTable = ({ db, setdataToEdit, deleteData }) => {
               <CrudTableRow
                 key={el.id}
                 db={el}
-                setdataToEdit={setdataToEdit}
-                deleteData={deleteData}
               />
             ))
           )}

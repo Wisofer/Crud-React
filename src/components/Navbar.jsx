@@ -23,11 +23,19 @@ const Navbar = () => {
                 Nosotros
               </span>
             </Link>
+
+            <Link to={"datos"}>
+              <span className="cursor-pointer text-white hover:text-gray-300">
+                Datos
+              </span>
+            </Link>
           </div>
         </div>
       </nav>
-      <div>
-        <Outlet />
+      <div className="container mx-auto mt-4">
+        <div className="w-full lg:w-3/4 xl:w-1/2 mx-auto">
+          <Outlet />
+        </div>
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useContexto } from "../context/Context";
 
 const initialForm = {
   id: null,
@@ -7,7 +8,9 @@ const initialForm = {
   edad: 0,
 };
 
-const CrudForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
+const CrudForm = () => {
+  const { createData, updateData, dataToEdit, setdataToEdit } = useContexto();
+
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -49,7 +52,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
 
   return (
     <div className="bg-white p-6 rounded-md shadow-md md:w-96 mx-auto">
-      <h3 className="text-lg md:text-2xl font-semibold mb-4">
+      <h3 className="text-lg md:text-2x1 font-semibold mb-4">
         {dataToEdit ? "Editar" : "Agregar"}
       </h3>
       <form onSubmit={handleSubmit}>
@@ -66,7 +69,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-600 text-sm font-medium mb-2">
+          <label className="block text-gray-700 text-sm font-medium mb-2">
             Apellido:
           </label>
           <input
@@ -91,13 +94,13 @@ const CrudForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
         </div>
         <div className="flex flex-col md:flex-row md:space-x-4">
           <button
-            className="w-full md:w-auto bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            className="w-full md:w-auto bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300"
             type="submit"
           >
             Enviar
           </button>
           <button
-            className="w-full md:w-auto bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 mt-2 md:mt-0"
+            className="w-full md:w-auto bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400 mt-2 md:mt-0 transition-colors duration-300"
             onClick={handleReset}
           >
             Limpiar

@@ -6,13 +6,14 @@ import Navbar from "./components/Navbar.jsx";
 import Contacto from "./pages/Contacto.jsx";
 import Nosotros from "./pages/Nosotros.jsx";
 import CrudTable from "./components/CrudTable.jsx";
+import { ContextoProvider } from "./context/Context.jsx";
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <Navbar/>  ,
+    element: <Navbar />,
     children: [
       {
         path: "",
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "contacto",
-        element: <Contacto/>,
+        element: <Contacto />,
+      },
+      {
+        path: "datos",
+        element: <CrudTable />,
       },
     ],
   },
@@ -32,6 +37,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ContextoProvider>
+      <RouterProvider router={router} />
+    </ContextoProvider>
   </React.StrictMode>
 );
