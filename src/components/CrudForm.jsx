@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useContexto } from "../context/Context";
+import { supabase } from "../api/Supabase";
 
 const initialForm = {
-  id: null,
+  idUser: null,
   nombre: "",
   apellido: "",
   edad: 0,
@@ -28,7 +29,7 @@ const CrudForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!form.nombre || !form.apellido || !form.edad) {
@@ -36,11 +37,29 @@ const CrudForm = () => {
       return;
     }
 
-    if (form.id === null) {
+    if (form.idUser === null) {
       createData(form);
+      const result = await supabase.from("crud").insert({
+        idUser: Date.now(),
+        nombre: form.nombre,
+        apellido: form.apellido,
+        edad: form.edad,
+      });
     } else {
       updateData(form);
+
+      const { error } = await supabase
+        .from("crud")
+        .update({
+          nombre: form.nombre,
+          apellido: form.apellido,
+          edad: form.edad,
+        })
+        .eq("idUser", form.idUser);
     }
+
+    
+
     handleReset();
     setForm(initialForm);
     setdataToEdit(null);
@@ -56,6 +75,12 @@ const CrudForm = () => {
         {dataToEdit ? "Editar" : "Agregar"}
       </h3>
       <form onSubmit={handleSubmit}>
+        <input
+          type="hidden"
+          value={form.idUser}
+          name="id"
+          onChange={handleChange}
+        />
         <div className="mb-4">
           <label className="block text-gray-600 text-sm font-medium mb-2">
             Nombre:

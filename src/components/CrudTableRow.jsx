@@ -3,14 +3,14 @@ import { useContexto } from "../context/Context";
 import { Link } from "react-router-dom";
 
 const CrudTableRow = ({ db }) => {
-  const { nombre, apellido, edad, id } = db;
+  
   const { deleteData, setdataToEdit } = useContexto();
 
   return (
     <tr className="hover:bg-gray-100 transition">
-      <td className="py-2 px-4 sm:py-3 sm:px-6">{nombre}</td>
-      <td className="py-2 px-4 sm:py-3 sm:px-6">{apellido}</td>
-      <td className="py-2 px-4 sm:py-3 sm:px-6">{edad}</td>
+      <td className="py-2 px-4 sm:py-3 sm:px-6">{db.nombre}</td>
+      <td className="py-2 px-4 sm:py-3 sm:px-6">{db.apellido}</td>
+      <td className="py-2 px-4 sm:py-3 sm:px-6">{db.edad}</td>
       <td className="py-2 px-4 sm:py-3 sm:px-6">
         <div className="flex flex-wrap gap-2">
           <Link to={"/"}>
@@ -24,7 +24,7 @@ const CrudTableRow = ({ db }) => {
 
           <button
             className="w-full sm:w-auto bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded-md transition duration-300"
-            onClick={() => deleteData(id)}
+            onClick={() => deleteData(db.idUser)}
           >
             Eliminar
           </button>

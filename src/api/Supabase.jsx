@@ -1,5 +1,9 @@
+import { createClient } from "@supabase/supabase-js";
 
-import { createClient } from '@supabase/supabase-js'
+const { VITE_APP_URL_SUPABASE, VITE_APP_URL_SUPABASE_TOKEN } = import.meta.env;
 
 // Create a single supabase client for interacting with your database
-const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key')
+export const supabase = createClient(
+  VITE_APP_URL_SUPABASE,
+  VITE_APP_URL_SUPABASE_TOKEN
+);

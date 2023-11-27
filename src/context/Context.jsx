@@ -1,3 +1,5 @@
+import { data } from "autoprefixer";
+import { supabase } from "../api/Supabase";
 import { createContext, useContext, useState } from "react";
 
 export const ContextFormulario = createContext();
@@ -14,39 +16,11 @@ export const useContexto = () => {
 };
 
 export const ContextoProvider = ({ children }) => {
-  const initialDb = [
-    {
-        id:1,
-        nombre:"William Fernando",
-        apellido:"Borge Vanegas",
-        edad:21
-    },
-    {
-      id:2,
-        nombre:"wisofer Fernando",
-        apellido:"Borge Vanegas",
-        edad:21
-    },
-    {
-       id:3,
-        nombre:"will Fernando",
-        apellido:"Borge Vanegas",
-        edad:21
-    },
-    {
-      id:4,
-        nombre:"ferhon Fernando",
-        apellido:"Borge Vanegas",
-        edad:21
-    },
-
-  ];
-  const [db, setDb] = useState(initialDb);
+  const [db, setDb] = useState([]);
   const [dataToEdit, setdataToEdit] = useState(null);
 
   const createData = (data) => {
-    data.id = Date.now();
-    setDb([...db, data]);
+    setDb([...db, data] );
   };
 
   const updateData = (data) => {
@@ -54,16 +28,24 @@ export const ContextoProvider = ({ children }) => {
     setDb(newData);
   };
 
-  const deleteData = (id) => {
+  const deleteData = async (id) => {
     const confirmDelete = window.confirm(
       "¿Estás seguro de que deseas eliminar este elemento?"
-    );
+    ); 
 
     if (confirmDelete) {
-      const newData = db.filter((el) => el.id !== id);
+      const { error } = await supabase.from("crud").delete().eq("idUser", id);
+      const newData = db.filter((el) => el.idUser !== id);
       setDb(newData);
+      
+      
     }
+
+    
   };
 
-  return <ContextFormulario.Provider value={{createData, updateData, deleteData, db, setdataToEdit, dataToEdit }} >{children}</ContextFormulario.Provider>;
+  
+
+
+  return <ContextFormulario.Provider value={{createData, updateData, deleteData, db, setDb, setdataToEdit, dataToEdit }} >{children}</ContextFormulario.Provider>;
 };

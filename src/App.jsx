@@ -12,7 +12,7 @@ function App() {
   const { nombre } = useContexto();
 
   // Muestra el nombre en la consola (útil para depuración)
-  console.log(nombre);
+  
 
   // Renderiza la aplicación
   return (
