@@ -1,6 +1,7 @@
 import React from "react";
 import { useContexto } from "../context/Context";
 import { Link } from "react-router-dom";
+import Modal from "./Modal";
 
 const CrudTableRow = ({ db }) => {
   
@@ -28,6 +29,8 @@ const CrudTableRow = ({ db }) => {
           >
             Eliminar
           </button>
+
+          <Modal idUser={db.idUser} />
         </div>
       </td>
     </tr>

@@ -9,6 +9,7 @@ import CrudTable from "./components/CrudTable.jsx";
 import { ContextoProvider } from "./context/Context.jsx";
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Modal from "./components/Modal.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "datos",
         element: <CrudTable />,
+      },
+      {
+        path: "modal",
+        element: <Modal />,
       },
     ],
   },
