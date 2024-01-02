@@ -5,6 +5,7 @@ import "./App.css";
 // Importa el componente CrudApp y la función useContexto desde el contexto
 import CrudApp from "./components/CrudApp";
 import { useContexto } from "./context/Context";
+import Chat from "./components/Chat";
 
 // Define el componente principal de la aplicación
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <div className="container mx-auto py-8">
           <div className="max-w-lg mx-auto lg:max-w-full">
             {/* Renderiza el componente CrudApp dentro de un contenedor */}
-            <CrudApp />
+            <Chat />
           </div>
         </div>
       </div>

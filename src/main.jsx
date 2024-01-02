@@ -10,6 +10,7 @@ import { ContextoProvider } from "./context/Context.jsx";
 //import 'bootstrap/dist/css/bootstrap.min.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Modal from "./components/Modal.jsx";
+import CrudApp from "./components/CrudApp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <App />,
+      },
+      {
+        path: "formulario",
+        element: <CrudApp />,
       },
       {
         path: "nosotros",

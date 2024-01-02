@@ -12,6 +12,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex space-x-4">
+          <Link to={"formulario"}>
+              <span className="cursor-pointer text-white hover:text-gray-300">
+                Formulario
+              </span>
+            </Link>
             <Link to={"contacto"}>
               <span className="cursor-pointer text-white hover:text-gray-300">
                 Contacto
