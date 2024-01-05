@@ -6,7 +6,7 @@ const initialForm = {
   idUser: null,
   nombre: "",
   apellido: "",
-  edad: 0,
+  edad: "",
 };
 
 const CrudForm = () => {
@@ -70,8 +70,8 @@ const CrudForm = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-md shadow-md md:w-96 mx-auto">
-      <h3 className="text-lg md:text-2x1 font-semibold mb-4">
+    <div className="bg-zinc-800 p-6 rounded-md shadow-md md:w-96 mx-auto">
+      <h3 className="text-lg md:text-2x1 font-semibold mb-4 text-white">
         {dataToEdit ? "Editar" : "Agregar"}
       </h3>
       <form onSubmit={handleSubmit}>
@@ -82,11 +82,11 @@ const CrudForm = () => {
           onChange={handleChange}
         />
         <div className="mb-4">
-          <label className="block text-gray-600 text-sm font-medium mb-2">
+          <label className="block text-gray-600 text-sm font-medium mb-2 text-white">
             Nombre:
           </label>
           <input
-            className="block border border-gray-300 p-2 w-full"
+            className="block text-white border border-gray-300 p-2 w-full bg-zinc-700"
             value={form.nombre}
             type="text"
             onChange={handleChange}
@@ -94,11 +94,11 @@ const CrudForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-medium mb-2">
+          <label className="block text-gray-700 text-sm font-medium mb-2 text-white ">
             Apellido:
           </label>
           <input
-            className="block border border-gray-300 p-2 w-full"
+            className="block border text-white border-gray-300 p-2 w-full bg-zinc-700"
             value={form.apellido}
             type="text"
             onChange={handleChange}
@@ -106,11 +106,11 @@ const CrudForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-600 text-sm font-medium mb-2">
+          <label className="block text-gray-600 text-sm font-medium mb-2 text-white">
             Edad:
           </label>
           <input
-            className="block border border-gray-300 p-2 w-full"
+            className="block border text-white border-gray-300 p-2 w-full bg-zinc-700"
             value={form.edad}
             type="text"
             onChange={handleChange}

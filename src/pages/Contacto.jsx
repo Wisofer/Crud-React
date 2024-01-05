@@ -11,21 +11,21 @@ const Contacto = () => {
 
   })
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="bg-white p-8 rounded-md shadow-md max-w-lg w-full">
-        <h2 className="text-3xl font-semibold mb-4 text-center">Información de Contacto</h2>
+    <div className="min-h-screen mx-3 flex items-center justify-center">
+      <div className="bg-zinc-700  p-10 rounded-md shadow-md max-w-lg w-full">
+        <h2 className="text-3xl text-white font-semibold mb-4 text-center">Información de Contacto</h2>
         <div className="mb-4">
-          <h3 className="text-xl font-semibold mb-2">Detalles de Contacto</h3>
-          <p className="text-gray-600">Correo electrónico: {informacion.correo} </p>
-          <p className="text-gray-600">Teléfonos: (505) {informacion.telefono1} - {informacion.telefono2}  </p>
+          <h3 className="text-xl font-semibold mb-2 text-white">Detalles de Contacto</h3>
+          <p className="text-gray-600 text-white">Correo electrónico: {informacion.correo} </p>
+          <p className="text-gray-600 text-white">Teléfonos: (505) {informacion.telefono1} - {informacion.telefono2}  </p>
         </div>
         <div className="mb-4">
-          <h3 className="text-xl font-semibold mb-2">Ubicación: {informacion.ubicacion}</h3>
-          <p className="text-gray-600">{informacion.calle}</p>
-          <p className="text-gray-600"> {informacion.pais} </p>
+          <h3 className="text-xl font-semibold mb-2 text-white">Ubicación: {informacion.ubicacion}</h3>
+          <p className="text-gray-600 text-white">{informacion.calle}</p>
+          <p className="text-gray-600 text-white"> {informacion.pais} </p>
         </div>
         <div className="text-center">
-          <p className="text-gray-600">Muchas gracias por establecerte en contacto.</p>
+          <p className="text-gray-600 text-white">Muchas gracias por establecerte en contacto.</p>
         </div>
       </div>
     </div>

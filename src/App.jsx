@@ -19,7 +19,8 @@ function App() {
   return (
     <>
       {/* Estructura básica de la aplicación */}
-      <div className="bg-gray-200 mt-10 ">
+      <div></div>
+      <div className=" mt-10 ">
         <div className="container mx-auto py-8">
           <div className="max-w-lg mx-auto lg:max-w-full">
             {/* Renderiza el componente CrudApp dentro de un contenedor */}

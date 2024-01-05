@@ -33,27 +33,27 @@ const CrudTable = () => {
     <div className="mt-4">
       {loading ? (
 
-        <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-white">
+        <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-zinc-700">
           <div className="p-40 rounded-md shadow-md">
-            <h1 className="text-center text-lg text-gray-600">Cargando...</h1>
+            <h1 className="text-center text-lg text-gray-600 text-white">Cargando...</h1>
           </div>
         </div>
         
       ) : db.length === 0 ? (
-        <div className="bg-white p-4 rounded-md shadow-md">
-          <p className="text-center text-gray-600">Sin Datos</p>
+        <div className="bg-zinc-700 p-4 rounded-md shadow-md">
+          <p className="text-center text-white text-gray-600">Sin Datos</p>
         </div>
       ) : (
-        <div className="grid gap-4 grid-cols-1 ho sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3  m-1">
+        <div className="grid gap-4 grid-cols-1 ho sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-3 m-1">
           {db.map((el) => (
             <div
               key={el.id}
-              className="bg-white hover:bg-slate-200  border-radius: 300px; mt-5 p-4 rounded-md shadow-md "
+              className="bg-zinc-700 hover:bg-zinc-800  border-radius: 300px; mt-5 mx-5 p-4 rounded-md shadow-md "
             >
-              <p className="mb-2 text-xl font-semibold">
+              <p className="mb-2 text-xl font-semibold text-white">
                 {el.nombre} {el.apellido}
               </p>
-              <p className="text-gray-600">Edad: {el.edad}</p>
+              <p className="text-gray-600 text-white">Edad: {el.edad}</p>
 
               <div className="flex flex-wrap gap-2 mt-4">
                 <Link
