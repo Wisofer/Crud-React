@@ -22,6 +22,7 @@ export default function Modal({ idUser }) {
   return (
     <>
       <button
+      className="font-bold text-white"
         
         onClick={() => setShowModal(true)}
       >

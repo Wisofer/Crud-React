@@ -69,7 +69,7 @@ const CrudTable = () => {
                   </button>
                 </Link>
 
-                <Link className="bg-green-500 rounded border py-1 px-1 font-bold text-white hover:bg-green-700">
+                <Link className="bg-green-500 rounded border py-1 px-1   hover:bg-green-700">
                   <Modal idUser={el.idUser} />
                 </Link>
               </div>
