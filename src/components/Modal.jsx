@@ -13,7 +13,7 @@ export default function Modal({ idUser }) {
         .select("*")
         .eq("idUser", idUser);
       setData(data[0]);
-      console.log(data);
+      
     };
 
     fetchDataFromSupabase();
