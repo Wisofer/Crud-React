@@ -16,7 +16,7 @@ const Chat = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-4 bg-zinc-800 mx-4 sm:bg-zinc-800 rounded-md">
+    <div className="max-w-md mx-auto  mt-8 p-4 bg-zinc-800  sm:bg-zinc-800 rounded-md">
       <h1 className="text-2xl font-semibold mb-4 text-white text-center">Chat App</h1>
       <div className="border border-gray-300 text-white p-4 h-64 overflow-y-auto mb-4">
         {messages.map((message, index) => (
