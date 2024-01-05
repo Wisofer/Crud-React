@@ -22,7 +22,7 @@ export default function Modal({ idUser }) {
   return (
     <>
       <button
-        className="w-full sm:w-auto bg-green-500 hover:bg-blue-700 text-white py-1 px-3 rounded-md mb-2 sm:mb-0 sm:mr-2 transition duration-300"
+        
         onClick={() => setShowModal(true)}
       >
         Mostrar

@@ -1,6 +1,7 @@
 import { data } from "autoprefixer";
 import { supabase } from "../api/Supabase";
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const ContextFormulario = createContext();
 
@@ -26,6 +27,9 @@ export const ContextoProvider = ({ children }) => {
   const updateData = (data) => {
     let newData = db.map((el) => (el.id === data.id ? data : el));
     setDb(newData);
+    
+    
+    
   };
 
   const deleteData = async (id) => {
@@ -37,6 +41,7 @@ export const ContextoProvider = ({ children }) => {
       const { error } = await supabase.from("crud").delete().eq("idUser", id);
       const newData = db.filter((el) => el.idUser !== id);
       setDb(newData);
+      
       
       
     }

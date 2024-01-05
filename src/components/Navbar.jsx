@@ -17,24 +17,6 @@ const Navbar = () => {
               <span className="cursor-pointer hover:text-gray-300">Home</span>
             </Link>
           </div>
-          <div className="lg:hidden">
-            <button
-              className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-300 hover:text-white hover:border-white"
-              onClick={toggleMenu}
-            >
-              <svg
-                className="h-4 w-4 fill-current"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Menu</title>
-                <path
-                  fillRule="evenodd"
-                  d="M3 5h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2zm0 5h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2zm0 5h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2z"
-                ></path>
-              </svg>
-            </button>
-          </div>
           <div
             className={`${
               isOpen ? "block" : "hidden"
@@ -68,6 +50,24 @@ const Navbar = () => {
             >
               Datos
             </Link>
+          </div>
+          <div className="lg:hidden">
+            <button
+              className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-300 hover:text-white hover:border-white"
+              onClick={toggleMenu}
+            >
+              <svg
+                className="h-4 w-4 fill-current"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Menu</title>
+                <path
+                  fillRule="evenodd"
+                  d="M3 5h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2zm0 5h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2zm0 5h14a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2z"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
       </nav>
